@@ -1,0 +1,36 @@
+type Query {
+    me: Account
+    game: Game
+}
+
+type Mutation {
+    updateMe(input: MeUpdateInput): Account
+    saveGame(input: GameSaveInput): Game
+}
+
+type Account {
+    id: ID!
+    firstName: String!
+    lastName: String!
+}
+
+type Game {
+    _id: ID!
+    title: String!
+    perex: String!
+    ranking: Int!
+    platform: String!
+}
+
+input MeUpdateInput {
+    id: ID!
+    firstName: String
+    lastName: String
+}
+
+input GameSaveInput {
+    title: String
+    perex: String
+    ranking: Int
+    platform: String
+}
